@@ -1,0 +1,3 @@
+/home/alexander/study/Алгоритмы/Harris/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/alexander/study/Алгоритмы/Harris/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/alexander/study/Алгоритмы/Harris/cmake-build-debug/CMakeFiles/Harris.dir
