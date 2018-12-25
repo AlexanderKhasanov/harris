@@ -51,8 +51,8 @@ double comparison_descriptor(const vector<descriptor_type>& img1, const vector<d
 
 int main(int argc, char *argv[])
 {
-    //ifstream file(argv[1]);
-    ifstream file("/home/alexander/study/Алгоритмы/Harris/input.txt");
+    ifstream file(argv[1]);
+    //ifstream file("/home/alexander/study/Алгоритмы/Harris/input.txt");
 
 
     if(!file.is_open())
@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
         if ( k >= 1)
         {
             result.push_back( img_path );
-            cout<<" (Уверенность - "<<k<<")"<<endl;
+            //cout<<" (Уверенность - "<<k<<")"<<endl;
         }
     }
 
