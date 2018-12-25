@@ -124,6 +124,8 @@ Harris: /usr/local/lib/libopencv_video.so.4.0.0
 Harris: /usr/local/lib/libopencv_objdetect.so.4.0.0
 Harris: /usr/local/lib/libopencv_stitching.so.4.0.0
 Harris: /usr/local/lib/libopencv_calib3d.so.4.0.0
+Harris: /usr/local/lib/libboost_system.so
+Harris: /usr/local/lib/libboost_filesystem.so
 Harris: /usr/local/lib/libopencv_features2d.so.4.0.0
 Harris: /usr/local/lib/libopencv_highgui.so.4.0.0
 Harris: /usr/local/lib/libopencv_videoio.so.4.0.0

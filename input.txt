@@ -1,0 +1,3 @@
+/home/alexander/study/Алгоритмы/Harris/K1.jpg
+/home/alexander/study/Алгоритмы/Harris/photo
+/home/alexander/study/Алгоритмы/Harris/result.txt

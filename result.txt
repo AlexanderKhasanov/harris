@@ -1,0 +1,6 @@
+/home/alexander/study/Алгоритмы/Harris/photo/K5.jpg
+/home/alexander/study/Алгоритмы/Harris/photo/K2.jpg
+/home/alexander/study/Алгоритмы/Harris/photo/1.jpg
+/home/alexander/study/Алгоритмы/Harris/photo/K12.jpg
+/home/alexander/study/Алгоритмы/Harris/photo/2.jpg
+/home/alexander/study/Алгоритмы/Harris/photo/K13.jpg

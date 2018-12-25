@@ -2,8 +2,8 @@
 
 detector_harrisa::detector_harrisa()
     : _window_size (5)
-    , _min_intensiti (300)
-    , _bobl_raduis (3)
+    , _min_intensiti (10)
+    , _bobl_raduis (5)
     , _k (0.05)
     , _dimensionality (256)
     , _size_area_point (30)
@@ -206,21 +206,35 @@ vector<descriptor_type> detector_harrisa::brief(const matrix_type &pixel_image,
         for (size_type i = 0; i < _dimensionality; ++i)
         {
             size_type offset = size_area_point() / 2;
-            while (current_key->coordinates.x + offset >= pixel_image.cols ||
-                   current_key->coordinates.x - offset < 0 ||
-                   current_key->coordinates.y + offset >= pixel_image.rows ||
-                   current_key->coordinates.y - offset < 0) {
+            int q1 = current_key->coordinates.x + offset;
+            int q2 = current_key->coordinates.x - offset;
+            int q3 = current_key->coordinates.y + offset;
+            int q4 = current_key->coordinates.y - offset;
+            while ( q1 >= pixel_image.cols || q2 < 0 || q3 >= pixel_image.rows || q4 < 0 )
+            {
                 offset /= 2;
+                q1 = current_key->coordinates.x + offset;
+                q2 = current_key->coordinates.x - offset;
+                q3 = current_key->coordinates.y + offset;
+                q4 = current_key->coordinates.y - offset;
             }
 
+            int delta_x1 = 0;
+            int delta_x2 = 0;
 
+            int delta_y1 = 0;
+            int delta_y2 = 0;
 
             size_type interval = offset - area_for_average()/2;
-            int delta_x1 = -interval + rand() % ( 2 * interval );
-            int delta_x2 = -interval + rand() % ( 2 * interval );
+            if ( interval > 0 )
+            {
+                delta_x1 = -interval + rand() % ( 2 * interval );
+                delta_x2 = -interval + rand() % ( 2 * interval );
 
-            int delta_y1 = -interval + rand() % ( 2 * interval );
-            int delta_y2 = -interval + rand() % ( 2 * interval );
+                delta_y1 = -interval + rand() % ( 2 * interval );
+                delta_y2 = -interval + rand() % ( 2 * interval );
+            }
+
 
             double I1 = average_intensity(current_key->coordinates.x + delta_x1,
                                           current_key->coordinates.y + delta_y1, pixel_image);
@@ -233,7 +247,7 @@ vector<descriptor_type> detector_harrisa::brief(const matrix_type &pixel_image,
             else
                 vec.push_back(0);
         }
-        descriptors.push_back(descriptor_type(current_key->coordinates, vec));
+        descriptors.push_back( vec );
     }
     return descriptors;
 }

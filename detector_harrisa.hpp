@@ -35,7 +35,7 @@ struct key_point
 using value_type = double;
 using matrix_type = Mat_<value_type>;
 using size_type = size_t;
-using descriptor_type = pair< point, vector<bool> >;
+using descriptor_type = vector<bool>;
 
 class detector_harrisa
 {
